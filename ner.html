@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP WEB | NER</title>
+    <link rel="stylesheet" href="../static/ner_style.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+
+    <div class="container">
+        <h2>Named Entity Recognition (NER)</h2>
+        <form action="/perform_ner" method="post">
+            <label>Enter your text here:</label>
+            <textarea name="text" placeholder="Type your text..."></textarea><br>
+            <input type="submit" value="Generate">
+        </form>
+
+        {% if result %}
+            <div class="result-box">
+                <h3>NER Output:</h3>
+                <p>{{ result | safe }}</p> <!-- Using 'safe' to render HTML correctly -->
+            </div>
+        {% endif %}
+
+    </div>
+
+    <a href="/home" class="back-btn" > 🔙 Go Back to Homepage </a>
+
+
+</body>
+</html>

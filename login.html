@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP WEB | Login Page</title>
+    <link rel="stylesheet" href="../static/login_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NLP WEB</h1>
+
+        {% if message %}
+        <p class="error-message">{{ message }}</p>
+        {% endif %}
+
+        <h3>Login Here</h3><br>
+
+        <form action="/perform_login" method="post">
+<!--            <label>Email</label>-->
+            <input type="email" name="user_email" placeholder="Enter your email address" required><br>
+
+<!--            <label>Password</label>-->
+            <input type="password" name="user_password" placeholder="Enter your password" required><br>
+
+            <input type="submit" value="Login"><br>
+
+            <p>Not a member? <a href="/register">Click here to register</a></p>
+        </form>
+    </div>
+</body>
+</html>
