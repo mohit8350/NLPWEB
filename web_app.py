@@ -83,4 +83,6 @@ def perform_abuse_detection():
     message_to_show = apio.detect_abuse(text)
     return render_template('abuse_detection.html', result = message_to_show)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
+    app.run(host="0.0.0.0", port=port, debug=True)
