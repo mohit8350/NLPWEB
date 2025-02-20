@@ -115,10 +115,12 @@ class Classifiers:
 
     # Classifying the severity of abusive content
     def classify_abuse_severity(self, score):
-        if score <= 0.2:
+        if score <= 0.15:
+            return "not abusive"
+        elif score <= 0.2:
             return "slightly abusive"
         elif score <= 0.4:
-            return "moderately abusive"
+            return "abusive"
         elif score <= 0.6:
             return "highly abusive"
         elif score <= 0.8:
